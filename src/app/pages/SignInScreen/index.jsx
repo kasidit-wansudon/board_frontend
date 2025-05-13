@@ -33,35 +33,67 @@ export default function SignInScreen() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row bg-green-500">
-      {/* Left Section: Form */}
-      <div className="flex-1 flex flex-col justify-center items-center p-8">
+    <div className="min-h-screen flex flex-col bg-green-500">
+      {/* Mobile Top Image */}
+      <div className="md:hidden flex-1 flex flex-col justify-center items-center bg-green-300 rounded-b-3xl p-6">
+        <img
+          src={notebookImg.src}
+          alt="Board Logo"
+          className="w-40 h-40 mb-4"
+        />
+        <img src={logoWhite.src} alt="a Board" className="w-32" />
+      </div>
+
+      {/* Mobile Form */}
+      <div className="md:hidden flex-1 flex flex-col justify-center items-center p-6 bg-green-500">
         <div className="w-full max-w-md">
           <h1 className="text-white text-2xl font-semibold mb-6">Sign in</h1>
           <input
             type="text"
             placeholder="Username"
             value={username}
-            onChange={(e) => setUsername(e.target.value)} // ✅ Bind input to state
-            className="w-full p-3 rounded-md mb-4 border border-gray-300 text-secondary-placholder bg-white text-black"
+            onChange={(e) => setUsername(e.target.value)}
+            className="w-full p-3 rounded-md mb-4 border border-gray-200 bg-white text-black"
           />
           <button
-            onClick={handleSubmit} // ✅ Fix function reference
-            className="w-full cursor-pointer bg-green-600 text-white p-3 rounded-md hover:bg-green-700 transition"
+            onClick={handleSubmit}
+            className="w-full bg-success font-bold text-white p-3 hover:bg-green-700 transition"
           >
             Sign In
           </button>
         </div>
       </div>
 
-      {/* Right Section: Image */}
-      <div className="hidden md:flex flex-1 flex-col justify-center items-center bg-green-300 p-8 rounded-l-[3rem]">
-        <img
-          src={notebookImg.src}
-          alt="Board Logo"
-          className="w-40 h-40 mb-4"
-        />
-        <img src={logoWhite.src} alt="" />
+      {/* Desktop Layout */}
+      <div className="hidden md:flex flex-1">
+        {/* Left Image */}
+        <div className="flex-1 flex flex-col justify-center items-center p-8 bg-green-500">
+          <div className="w-full max-w-md">
+            <h1 className="text-white text-2xl font-semibold mb-6">Sign in</h1>
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="w-full p-3 rounded-md mb-4 border border-gray-300 bg-white text-black"
+            />
+            <button
+              onClick={handleSubmit}
+              className="w-full bg-success font-bold text-white p-3 rounded-md hover:bg-green-700 transition"
+            >
+              Sign In
+            </button>
+          </div>
+        </div>
+        {/* Right Form */}
+        <div className="flex-1 flex flex-col justify-center items-center bg-green-300 p-8 rounded-l-3xl">
+          <img
+            src={notebookImg.src}
+            alt="Board Logo"
+            className="w-40 h-40 mb-4"
+          />
+          <img src={logoWhite.src} alt="a Board" className="w-32" />
+        </div>
       </div>
     </div>
   );

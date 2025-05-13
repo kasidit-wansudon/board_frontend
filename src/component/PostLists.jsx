@@ -31,7 +31,14 @@ export default function PostList({
               </span>
               {canEdit && (
                 <div className="ml-2 space-x-2 text-gray-500 flex items-center">
-                  <button onClick={() => onEdit?.(post)}>
+                  <button
+                    className="p-1"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      onEdit?.(post);
+                    }}
+                  >
                     <svg
                       className="w-4 h-4"
                       fill="none"
@@ -47,7 +54,14 @@ export default function PostList({
                       />
                     </svg>
                   </button>
-                  <button onClick={() => onDelete?.(post)}>
+                  <button
+                    className="p-1"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      onDelete?.(post);
+                    }}
+                  >
                     <svg
                       className="w-4 h-4"
                       fill="none"
