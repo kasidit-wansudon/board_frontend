@@ -20,6 +20,10 @@
    ```bash
    ไม่ได้ทำครับ ใช้แค่ swagger ใน Nest
    ```
+set .ENV
+```
+NEST_API_URL=http://[::1]:30001
+```
 
 ## Application Architecture Overview
 - **Frontend**: Next.js App Router, React components (TypeScript), TailwindCSS for styling.
