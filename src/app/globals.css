@@ -1,26 +1,69 @@
 @import "tailwindcss";
-
+button {
+  cursor: pointer;
+}
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --green-300: #2b5f44;
+  --green-500: #243831;
+  --green-100: #d8e9e4;
+  --golden: #c5a365;
+  --black: #000000;
+  --white: #ffffff;
+
+  --text: #191919;
+  --grey-100: #bbc2c0;
+  --grey-300: #939494;
+  --success: #49a569;
+
+  --secondary: #a0afba;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.bg-green-300 {
+  background-color: var(--green-300);
+}
+.bg-green-500 {
+  background-color: var(--green-500);
+}
+.text-green-500 {
+  color: var(--green-500);
+}
+.bg-green-100 {
+  background-color: var(--green-100);
+}
+.bg-golden {
+  background-color: var(--golden);
+}
+.bg-black {
+  background-color: var(--black);
+}
+.bg-white {
+  background-color: var(--white);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.text-text {
+  background-color: var(--text);
+}
+.text-grey-100 {
+  background-color: var(--grey-100);
+}
+.text-grey-300 {
+  background-color: var(--grey-300);
+}
+.text-success {
+  color: var(--success);
+}
+.bg-success {
+  background-color: var(--success);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.text-secondary {
+  color: var(--secondary);
+}
+.text-secondary-placeholder::placeholder {
+  color: var(--secondary);
+}
+
+.text-sm {
+  font-size: 14px;
+  line-height: 20px;
 }
